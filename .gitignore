@@ -1,0 +1,6 @@
+*/__pycache__/*
+*.pyc
+.env
+
+# Don't commit databases, ever. No sense in a leak.
+*.db
