@@ -1,6 +1,7 @@
 */__pycache__/*
 *.pyc
 .env
+.venv
 
 # Don't commit databases, ever. No sense in a leak.
 *.db

@@ -35,15 +35,15 @@ def create_db_and_tables():
     SQLModel.metadata.create_all(engine)
 
 
-app = FastAPI()
-
-create_db_and_tables()
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    print("Starting")
+    create_db_and_tables()
     yield
     print("Stopping")
+
+
+app = FastAPI(lifespan=lifespan)
 
 
 def _call_polygon_api(url: str, headers: dict = None, transport: object = httpx):
