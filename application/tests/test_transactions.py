@@ -89,7 +89,7 @@ def test_get_candles():
     do we inhibit duplicates?
     """
     response_data = make_response()
-    with mock.patch("polygon_io.main._call_polygon_api") as mock_call:
+    with mock.patch("application.main._call_polygon_api") as mock_call:
         mock_call.return_value = MockResponse(
             json_data=json.dumps(response_data), status_code=200
         )
